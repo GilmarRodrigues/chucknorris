@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="br.com.gr.api.io.chucknorris.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="br.com.gr.api.io.chucknorris.ui.fragment.ListaCategoriasFragment"
+        android:label="@string/titulo_nav_categorias"
+        tools:layout="@layout/fragment_lista_categorias" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="br.com.gr.api.io.chucknorris.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="br.com.gr.api.io.chucknorris.ui.fragment.ListaFavoritosFragment"
+        android:label="@string/titulo_nav_favoritos"
+        tools:layout="@layout/fragment_lista_favoritos" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="br.com.gr.api.io.chucknorris.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="br.com.gr.api.io.chucknorris.ui.fragment.SobreFragment"
+        android:label="@string/titulo_nav_sobre"
+        tools:layout="@layout/fragment_sobre" />
 </navigation>
