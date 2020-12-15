@@ -55,6 +55,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
     // Room
     implementation "androidx.room:room-runtime:$room_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.room:room-compiler:$room_version"
     // Koin
     implementation "org.koin:koin-android:$koin_version"
