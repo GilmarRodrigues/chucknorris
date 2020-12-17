@@ -1,4 +1,5 @@
 package br.com.gr.api.io.chucknorris.repository
 
-class Resource {
-}
+class Resource<T>(
+        val dado: T?,
+        val erro: String? = null)

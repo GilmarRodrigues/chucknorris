@@ -3,18 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/splash_fragment">
-
-    <fragment
-        android:id="@+id/splash_fragment"
-        android:name="br.com.gr.api.io.chucknorris.ui.fragment.SplashFragment"
-        android:label=""
-        tools:layout="@layout/fragment_splash">
-        <action
-            android:id="@+id/action_splash_fragment_to_navigation_lista_categorias"
-            app:destination="@id/navigation_lista_categorias"
-            app:popUpTo="@id/mobile_navigation" />
-    </fragment>
+    app:startDestination="@+id/navigation_lista_categorias">
 
     <fragment
         android:id="@+id/navigation_lista_categorias"

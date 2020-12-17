@@ -1,4 +1,10 @@
 package br.com.gr.api.io.chucknorris.model
 
-class Categoria {
-}
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+class Categoria(
+        @PrimaryKey(autoGenerate = true)
+        val id: Long = 0,
+        val desc: String = "")

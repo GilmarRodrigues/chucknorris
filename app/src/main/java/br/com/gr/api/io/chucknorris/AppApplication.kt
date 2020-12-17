@@ -1,6 +1,7 @@
 package br.com.gr.api.io.chucknorris
 
 import android.app.Application
+import br.com.gr.api.io.chucknorris.di.appModule
 import br.com.gr.api.io.chucknorris.di.daoModule
 import br.com.gr.api.io.chucknorris.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -12,7 +13,7 @@ class AppApplication: Application() {
         super.onCreate()
         startKoin {
             androidContext(this@AppApplication)
-            modules(listOf(daoModule,viewModelModule))
+            modules(appModule)
         }
     }
 }
