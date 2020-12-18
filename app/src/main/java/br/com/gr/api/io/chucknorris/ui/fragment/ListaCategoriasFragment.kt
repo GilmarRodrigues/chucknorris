@@ -5,10 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout.VERTICAL
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import br.com.gr.api.io.chucknorris.databinding.FragmentListaCategoriasBinding
 import br.com.gr.api.io.chucknorris.ui.extensions.mostraErro
@@ -21,7 +19,7 @@ import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
-private const val MENSAGEM_FALHA_CARREGAR_NOTICIAS = "Não foi possível carregar as novas categorias"
+private const val MENSAGEM_FALHA_CARREGAR_CATEGORIA = "Não foi possível carregar as novas categorias"
 
 class ListaCategoriasFragment : Fragment() {
     private val adapter: CategoriaAdapter by inject()
@@ -54,19 +52,21 @@ class ListaCategoriasFragment : Fragment() {
 
     private fun configuraAdapter() {
         adapter.quandoItemClicado = { categoriaSelecionada ->
-            vaiParaVisualizaPiada(categoriaSelecionada.id)
+            vaiParaVisualizaPiada(categoriaSelecionada.desc)
         }
     }
 
     private fun buscaCategorias() {
         listaCategoriasViewModel.buscaTodos().observe(this, { resource ->
             resource.dado?.let { adapter.atualiza(it) }
-            resource.erro?.let { mostraErro(MENSAGEM_FALHA_CARREGAR_NOTICIAS)}
+            resource.erro?.let { mostraErro(MENSAGEM_FALHA_CARREGAR_CATEGORIA)}
         })
     }
 
-    private fun vaiParaVisualizaPiada(id: Long) {
-        mostraErro(id.toString())
+    private fun vaiParaVisualizaPiada(categoria: String) {
+        val direcao = ListaCategoriasFragmentDirections
+            .actionNavigationListaCategoriasToVisualizaPiadaFragment(categoria)
+        controlador.navigate(direcao)
     }
 
     private fun componentesVisuais() {

@@ -9,7 +9,7 @@ import br.com.gr.api.io.chucknorris.model.Categoria
 
 @Dao
 interface CategoriaDAO {
-    @Query("SELECT * FROM Categoria ORDER BY id DESC")
+    @Query("SELECT * FROM Categoria ORDER BY id ASC")
     fun buscaTodos(): LiveData<List<Categoria>>
 
     @Insert(onConflict = REPLACE)

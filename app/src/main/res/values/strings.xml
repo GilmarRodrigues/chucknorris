@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">Chuck Norris</string>
-    <string name="titulo_nav_categorias">Início</string>
-    <string name="titulo_nav_favoritos">Favoritos</string>
-    <string name="titulo_nav_sobre">Sobre</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_nav_categorias">Início</string>
+    <string name="title_nav_favoritos">Favoritos</string>
+    <string name="title_nav_sobre">Sobre</string>
+    <string name="title_nav_piada">Piada</string>
     <string name="text_splash">CHUCKNORRIS.IO</string>
     <string name="desc_icone_categoria">Icone da categoria</string>
     <string name="text_descricao">Descrição</string>
+    <string name="btn_fonte">Fonte</string>
+    <string name="text_value">Piada...</string>
+    <string name="text_categories">Categoria</string>
+    <string name="menu_favorito">Favorito</string>
 </resources>

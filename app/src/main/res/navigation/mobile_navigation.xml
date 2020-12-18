@@ -8,19 +8,32 @@
     <fragment
         android:id="@+id/navigation_lista_categorias"
         android:name="br.com.gr.api.io.chucknorris.ui.fragment.ListaCategoriasFragment"
-        android:label="@string/titulo_nav_categorias"
-        tools:layout="@layout/fragment_lista_categorias" />
+        android:label="@string/title_nav_categorias"
+        tools:layout="@layout/fragment_lista_categorias" >
+        <action
+            android:id="@+id/action_navigation_lista_categorias_to_visualizaPiadaFragment"
+            app:destination="@id/visualizaPiadaFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_lista_favoritos"
         android:name="br.com.gr.api.io.chucknorris.ui.fragment.ListaFavoritosFragment"
-        android:label="@string/titulo_nav_favoritos"
+        android:label="@string/title_nav_favoritos"
         tools:layout="@layout/fragment_lista_favoritos" />
 
     <fragment
         android:id="@+id/navigation_sobre"
         android:name="br.com.gr.api.io.chucknorris.ui.fragment.SobreFragment"
-        android:label="@string/titulo_nav_sobre"
+        android:label="@string/title_nav_sobre"
         tools:layout="@layout/fragment_sobre" />
+    <fragment
+        android:id="@+id/visualizaPiadaFragment"
+        android:name="br.com.gr.api.io.chucknorris.ui.fragment.VisualizaPiadaFragment"
+        android:label="@string/title_nav_piada"
+        tools:layout="@layout/fragment_visualiza_piada">
+        <argument
+            android:name="categoria"
+            app:argType="string" />
+    </fragment>
 
 </navigation>
