@@ -8,5 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="icon_bottom_navigation_inative">#8D8888</color>
+    <color name="cor_link">#4B9CF6</color>
 
 </resources>
