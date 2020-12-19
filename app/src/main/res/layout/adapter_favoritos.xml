@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="piada"
+            type="br.com.gr.api.io.chucknorris.ui.databinding.PiadaData" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_chucknoris_adapter_favoritos"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:visibility="@{piada.icon_url.empty ? View.GONE : View.VISIBLE}"
+            app:carregaImagem="@{piada.icon_url}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_categories_adapter_favoritos"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_value_adapter_favoritos"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_value_adapter_favoritos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@={piada.value}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_chucknoris_adapter_favoritos"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/text_value" />
+
+        <TextView
+            android:id="@+id/tv_categories_adapter_favoritos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="@={piada.categories}"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_chucknoris_adapter_favoritos"
+            app:layout_constraintTop_toBottomOf="@+id/tv_value_adapter_favoritos"
+            tools:text="@string/text_categories" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

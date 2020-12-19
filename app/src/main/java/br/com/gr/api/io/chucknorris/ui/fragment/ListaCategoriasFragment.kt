@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import br.com.gr.api.io.chucknorris.databinding.FragmentListaCategoriasBinding
-import br.com.gr.api.io.chucknorris.ui.extensions.mostraErro
-import br.com.gr.api.io.chucknorris.ui.recyclerview.adapter.CategoriaAdapter
+import br.com.gr.api.io.chucknorris.ui.extensions.mostraMensagem
+import br.com.gr.api.io.chucknorris.ui.recyclerview.adapter.CategoriasAdapter
 import br.com.gr.api.io.chucknorris.ui.viewmodel.ComponentesVisuais
 import br.com.gr.api.io.chucknorris.ui.viewmodel.EstadoAppViewModel
 import br.com.gr.api.io.chucknorris.ui.viewmodel.ListaCategoriasViewModel
@@ -22,7 +22,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 private const val MENSAGEM_FALHA_CARREGAR_CATEGORIA = "Não foi possível carregar as novas categorias"
 
 class ListaCategoriasFragment : Fragment() {
-    private val adapter: CategoriaAdapter by inject()
+    private val adapter: CategoriasAdapter by inject()
     private val listaCategoriasViewModel: ListaCategoriasViewModel by viewModel()
     private val estadoAppViewModel: EstadoAppViewModel by sharedViewModel()
     private val controlador by lazy { findNavController() }
@@ -59,7 +59,7 @@ class ListaCategoriasFragment : Fragment() {
     private fun buscaCategorias() {
         listaCategoriasViewModel.buscaTodos().observe(this, { resource ->
             resource.dado?.let { adapter.atualiza(it) }
-            resource.erro?.let { mostraErro(MENSAGEM_FALHA_CARREGAR_CATEGORIA)}
+            resource.erro?.let { mostraMensagem(MENSAGEM_FALHA_CARREGAR_CATEGORIA)}
         })
     }
 

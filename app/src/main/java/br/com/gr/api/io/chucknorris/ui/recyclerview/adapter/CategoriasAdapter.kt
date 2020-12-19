@@ -5,19 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import br.com.gr.api.io.chucknorris.databinding.AdapterCategoriaBinding
+import br.com.gr.api.io.chucknorris.databinding.AdapterCategoriasBinding
 import br.com.gr.api.io.chucknorris.model.Categoria
 import br.com.gr.api.io.chucknorris.ui.databinding.CategoriaData
 
-class CategoriaAdapter(
+class CategoriasAdapter(
         private val context: Context,
         private val categorias: MutableList<Categoria> = mutableListOf(),
         var quandoItemClicado: (categoria: Categoria) -> Unit = {}
-) : RecyclerView.Adapter<CategoriaAdapter.ViewHolder>(){
+) : RecyclerView.Adapter<CategoriasAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(context)
-        val viewDataBinding = AdapterCategoriaBinding.inflate(inflater, parent, false)
+        val viewDataBinding = AdapterCategoriasBinding.inflate(inflater, parent, false)
         return ViewHolder(viewDataBinding)
     }
 
@@ -35,7 +35,7 @@ class CategoriaAdapter(
         notifyItemRangeInserted(0, this.categorias.size)
     }
 
-    inner class ViewHolder(private val viewDataBinding: AdapterCategoriaBinding)
+    inner class ViewHolder(private val viewDataBinding: AdapterCategoriasBinding)
         : RecyclerView.ViewHolder(viewDataBinding.root), View.OnClickListener {
         private lateinit var categoria: Categoria
 

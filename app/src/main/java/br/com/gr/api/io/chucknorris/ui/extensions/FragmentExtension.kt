@@ -3,7 +3,7 @@ package br.com.gr.api.io.chucknorris.ui.extensions
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 
-fun Fragment.mostraErro(mensagem: String) {
+fun Fragment.mostraMensagem(mensagem: String) {
     Toast.makeText(
         context,
         mensagem,

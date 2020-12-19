@@ -10,6 +10,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import java.lang.Exception
+
+private const val PIADA_EXISTE = "Piada existe"
 
 class PiadaRepository(
         private val dao: PiadaDAO,
@@ -19,7 +22,7 @@ class PiadaRepository(
     private val job = Job()
     private val scope = CoroutineScope(Dispatchers.IO + job)
 
-    private fun buscaInterna() = dao.buscaTodos()
+    fun buscaTodas() = dao.buscaTodos()
 
     fun buscaNaApi(categoria: String): LiveData<Resource<Piada>> {
         webclient.buscaPiadaPorCategoria(
@@ -34,9 +37,17 @@ class PiadaRepository(
         return liveData
     }
 
-    private fun salvaInterno(piada: Piada) {
-        scope.launch {
-            dao.salva(piada)
+    fun salvaInterno(piada: Piada) =
+        MutableLiveData<Resource<Piada>>().also { liveData ->
+            scope.launch {
+                if (piadaNaoExiste(piada)) {
+                    dao.salva(piada)
+                    liveData.postValue(Resource(dado = piada, erro = null))
+                } else {
+                    liveData.postValue(Resource(dado = null, erro = PIADA_EXISTE))
+                }
+            }
         }
-    }
+
+    private fun piadaNaoExiste(piada: Piada) = piada.pk != dao.buscaPorPk(piada.pk)?.pk
 }

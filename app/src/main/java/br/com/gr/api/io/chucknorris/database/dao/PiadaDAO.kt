@@ -14,12 +14,12 @@ interface PiadaDAO {
     fun buscaTodos(): LiveData<List<Piada>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun salva(piada: Piada)
+    fun salva(piada: Piada) : Long
 
     @Query("SELECT * FROM Piada WHERE id = :id")
     fun buscaPorId(id: Long): LiveData<Piada?>
 
-    @Query("SELECT * FROM Piada WHERE value = :value")
-    fun buscaPorDesc(value: String): Piada?
+    @Query("SELECT * FROM Piada WHERE pk = :pk")
+    fun buscaPorPk(pk: String): Piada?
     
 }

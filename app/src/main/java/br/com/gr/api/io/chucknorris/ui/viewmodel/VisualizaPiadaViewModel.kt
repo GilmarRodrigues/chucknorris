@@ -11,8 +11,8 @@ class VisualizaPiadaViewModel(
         private val categoria: String,
         private val repository: PiadaRepository): ViewModel() {
 
-    fun piadaEncontrada() : LiveData<Resource<Piada>> {
-        return repository.buscaNaApi(categoria)
-    }
+    fun piadaEncontrada() = repository.buscaNaApi(categoria)
+
+    fun salvaPiada(piada: Piada)= repository.salvaInterno(piada)
 
 }

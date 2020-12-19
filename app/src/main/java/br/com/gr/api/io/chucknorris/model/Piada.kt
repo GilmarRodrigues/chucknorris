@@ -6,7 +6,7 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 @Entity
-class Piada(
+data class Piada(
         @PrimaryKey(autoGenerate = true)
         @SerializedName("id_interno")
         @Expose
@@ -14,7 +14,7 @@ class Piada(
         @SerializedName("id")
         @Expose
         val pk: String = "",
-        val categories: List<String> = mutableListOf(),
+        val categories: MutableList<String> = mutableListOf(),
         val icon_url: String = "",
         val url: String = "",
         val value: String = "")

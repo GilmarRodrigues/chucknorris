@@ -8,9 +8,11 @@ import br.com.gr.api.io.chucknorris.repository.CategoriaRepository
 import br.com.gr.api.io.chucknorris.repository.PiadaRepository
 import br.com.gr.api.io.chucknorris.retrofit.webclient.CategoriaWebClient
 import br.com.gr.api.io.chucknorris.retrofit.webclient.PiadaWebClient
-import br.com.gr.api.io.chucknorris.ui.recyclerview.adapter.CategoriaAdapter
+import br.com.gr.api.io.chucknorris.ui.recyclerview.adapter.CategoriasAdapter
+import br.com.gr.api.io.chucknorris.ui.recyclerview.adapter.FavoritosAdapter
 import br.com.gr.api.io.chucknorris.ui.viewmodel.EstadoAppViewModel
 import br.com.gr.api.io.chucknorris.ui.viewmodel.ListaCategoriasViewModel
+import br.com.gr.api.io.chucknorris.ui.viewmodel.ListaFavoritosViewModel
 import br.com.gr.api.io.chucknorris.ui.viewmodel.VisualizaPiadaViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -40,12 +42,14 @@ val repositoryModule = module {
     single<PiadaRepository> { PiadaRepository(get(), get()) }
 }
 val uiModule = module {
-    factory<CategoriaAdapter> { CategoriaAdapter(get()) }
+    factory<CategoriasAdapter> { CategoriasAdapter(get()) }
+    factory<FavoritosAdapter> { FavoritosAdapter(get()) }
 }
 val viewModelModule = module {
     viewModel<EstadoAppViewModel> { EstadoAppViewModel() }
     viewModel<ListaCategoriasViewModel> { ListaCategoriasViewModel(get()) }
     viewModel<VisualizaPiadaViewModel> { (categoria: String) -> VisualizaPiadaViewModel(categoria, get()) }
+    viewModel<ListaFavoritosViewModel> { ListaFavoritosViewModel(get()) }
 }
 
 val appModule = listOf(
