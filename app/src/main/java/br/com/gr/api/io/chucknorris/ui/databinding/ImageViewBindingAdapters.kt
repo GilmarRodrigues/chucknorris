@@ -4,9 +4,7 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import br.com.gr.api.io.chucknorris.ui.extensions.loadUrl
 
-private const val URL_BASE_IMG = ""
-
 @BindingAdapter("carregaImagem")
 fun ImageView.carregaImagemUrl(url: String?) {
-    url?.let { loadUrl("$URL_BASE_IMG$url") }
+    url?.let { loadUrl(url) }
 }

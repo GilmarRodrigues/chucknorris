@@ -4,7 +4,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -35,7 +34,6 @@ class VisualizaPiadaFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as AppCompatActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setHasOptionsMenu(true)
         buscaPiadaSelecionada()
     }
@@ -108,6 +106,6 @@ class VisualizaPiadaFragment : Fragment() {
     }
 
     private fun componentesVisuais() {
-        estadoAppViewModel.temComponentes = ComponentesVisuais(appBar = true, bottomNavigation = false)
+        estadoAppViewModel.temComponentes = ComponentesVisuais(appBar = true, bottomNavigation = false, setaHomeToolbar = true)
     }
 }

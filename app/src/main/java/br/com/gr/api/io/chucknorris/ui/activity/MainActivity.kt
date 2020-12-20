@@ -1,18 +1,13 @@
 package br.com.gr.api.io.chucknorris.ui.activity
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import br.com.gr.api.io.chucknorris.R
-import br.com.gr.api.io.chucknorris.retrofit.webclient.CategoriaWebClient
 import br.com.gr.api.io.chucknorris.ui.viewmodel.EstadoAppViewModel
-import com.google.gson.Gson
-import com.google.gson.JsonArray
-import com.google.gson.JsonElement
 import org.koin.android.viewmodel.ext.android.viewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -44,6 +39,11 @@ class MainActivity : AppCompatActivity() {
                         main_activity_bottom_navigation.visibility = View.VISIBLE
                     } else {
                         main_activity_bottom_navigation.visibility = View.GONE
+                    }
+                    if (temComponentes.setaHomeToolbar) {
+                        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+                    } else {
+                        supportActionBar?.setDisplayHomeAsUpEnabled(false)
                     }
                 }
             })
