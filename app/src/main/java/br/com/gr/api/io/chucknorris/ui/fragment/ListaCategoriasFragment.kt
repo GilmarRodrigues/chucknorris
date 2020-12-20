@@ -56,7 +56,7 @@ class ListaCategoriasFragment : Fragment() {
         }
     }
 
-    private fun buscaCategorias() {
+    fun buscaCategorias() {
         listaCategoriasViewModel.buscaTodos().observe(this, { resource ->
             resource.dado?.let { adapter.atualiza(it) }
             resource.erro?.let { mostraMensagem(MENSAGEM_FALHA_CARREGAR_CATEGORIA)}
@@ -72,4 +72,5 @@ class ListaCategoriasFragment : Fragment() {
     private fun componentesVisuais() {
         estadoAppViewModel.temComponentes = ComponentesVisuais(appBar = true, bottomNavigation = true)
     }
+
 }

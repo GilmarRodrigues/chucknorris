@@ -8,7 +8,7 @@ import br.com.gr.api.io.chucknorris.databinding.AdapterFavoritosBinding
 import br.com.gr.api.io.chucknorris.model.Piada
 import br.com.gr.api.io.chucknorris.ui.databinding.PiadaData
 
-class FavoritosAdapter(
+class FavoritosAdapter (
         private val context: Context,
         private val piadas: MutableList<Piada> = mutableListOf()
 ): RecyclerView.Adapter<FavoritosAdapter.ViewHolder>() {
@@ -27,9 +27,17 @@ class FavoritosAdapter(
     }
 
     fun atualiza(piadas: List<Piada>) {
-        notifyItemRangeRemoved(0, this.piadas.size)
+        removeLista()
         this.piadas.clear()
         this.piadas.addAll(piadas)
+        atualizaLista()
+    }
+
+    fun removeLista() {
+        notifyItemRangeRemoved(0, this.piadas.size)
+    }
+
+    fun atualizaLista() {
         notifyItemRangeInserted(0, this.piadas.size)
     }
 

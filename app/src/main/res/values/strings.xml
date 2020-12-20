@@ -10,8 +10,8 @@
     <string name="btn_fonte">Fonte</string>
     <string name="text_value">Piada...</string>
     <string name="text_categories">Categoria</string>
-    <string name="menu_favorito">Favorito</string>
     <string name="text_projeto_demostração">Aplicativo de demostração da API de ChuckNorris.</string>
+    <string name="menu_favorito">Favorito</string>
     <string name="link_chucknorris_io">API - http://chucknorris.io/</string>
     <string name="link_github_projeto">Github - https://github.com/GilmarRodrigues/chucknorris</string>
 </resources>

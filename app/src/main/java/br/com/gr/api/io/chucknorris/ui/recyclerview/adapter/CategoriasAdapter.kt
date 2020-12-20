@@ -29,10 +29,18 @@ class CategoriasAdapter(
     }
 
     fun atualiza(categorias: List<Categoria>) {
-        notifyItemRangeRemoved(0, this.categorias.size)
+        removeLista()
         this.categorias.clear()
         this.categorias.addAll(categorias)
+        atualizaLista()
+    }
+
+    fun atualizaLista() {
         notifyItemRangeInserted(0, this.categorias.size)
+    }
+
+    fun removeLista() {
+        notifyItemRangeRemoved(0, this.categorias.size)
     }
 
     inner class ViewHolder(private val viewDataBinding: AdapterCategoriasBinding)

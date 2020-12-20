@@ -22,9 +22,6 @@ class PiadaData(
     }
 
     fun paraPiada(): Piada? {
-        /*categories.value?.let { transformaCategoriaEmList(it).forEach {
-            Log.i("Script", "aqui $it")
-        } }*/
         return this.piada.copy(
                 pk = pk.value ?: return null,
                 categories = categories.value?.let { transformaCategoriaEmList(it) } ?: mutableListOf(),
