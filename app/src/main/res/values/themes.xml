@@ -13,4 +13,12 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="AppTheme.FontPrimaryTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/bebas_neue_regular</item>
+    </style>
+
+    <style name="AppTheme.FontSecondaryTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/bauhaus_93</item>
+    </style>
 </resources>

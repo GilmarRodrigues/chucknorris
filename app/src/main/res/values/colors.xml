@@ -10,4 +10,22 @@
     <color name="icon_bottom_navigation_inative">#8D8888</color>
     <color name="cor_link">#4B9CF6</color>
 
+
+    <color name="cordview_animal">#2578FA</color>
+    <color name="cordview_career">#FFABCC</color>
+    <color name="cordview_celebrity">#7F6FDE</color>
+    <color name="cordview_dev">#55B5A0</color>
+    <color name="cordview_explicit">#99CC67</color>
+    <color name="cordview_fashion">#FF9999</color>
+    <color name="cordview_food">#FFCC00</color>
+    <color name="cordview_history">#30BA30</color>
+    <color name="cordview_monei">#CC9933</color>
+    <color name="cordview_movie">#993366</color>
+    <color name="cordview_music">#6666CC</color>
+    <color name="cordview_political">#CC99CC</color>
+    <color name="cordview_religion">#F59A3F</color>
+    <color name="cordview_science">#999966</color>
+    <color name="cordview_sport">#5CEDBD</color>
+    <color name="cordview_travel">#CC3366</color>
+
 </resources>

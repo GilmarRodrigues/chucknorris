@@ -11,25 +11,50 @@
             name="categoria"
             type="br.com.gr.api.io.chucknorris.ui.databinding.CategoriaData" />
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:onClick="@{(view) -> clicaNaCategoria.onClick(view)}"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/tv_desc_categoria_adapter"
-            android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:onClick="@{(view) -> clicaNaCategoria.onClick(view)}"
+            android:id="@+id/constraint_layout_adapter_categoria"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:padding="5dp"
-            android:text="@={categoria.desc}"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/text_descricao" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:background="@color/cordview_animal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_icone_adapter_categoria"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/desc_icone_categoria"
+                app:layout_constraintBottom_toTopOf="@+id/tv_desc_categoria_adapter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/ic_categoria_animal" />
+
+            <TextView
+                android:id="@+id/tv_desc_categoria_adapter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginBottom="32dp"
+                android:padding="5dp"
+                android:text="@={categoria.desc}"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                style="@style/AppTheme.FontSecondaryTheme"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@string/text_descricao" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

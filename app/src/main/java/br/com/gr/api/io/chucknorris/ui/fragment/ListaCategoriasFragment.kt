@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout.VERTICAL
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import br.com.gr.api.io.chucknorris.databinding.FragmentListaCategoriasBinding
 import br.com.gr.api.io.chucknorris.ui.extensions.mostraMensagem
@@ -44,8 +45,8 @@ class ListaCategoriasFragment : Fragment() {
     }
 
     private fun configuraRecycleView() {
-        val divisor = DividerItemDecoration(context, VERTICAL)
-        fragment_recycleview_categoria.addItemDecoration(divisor)
+        fragment_recycleview_categoria.itemAnimator = DefaultItemAnimator()
+        fragment_recycleview_categoria.setHasFixedSize(true)
         fragment_recycleview_categoria.adapter = adapter
         configuraAdapter()
     }
