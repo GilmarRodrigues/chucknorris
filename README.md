@@ -1,4 +1,4 @@
-# app chucknorris
+# App ChuckNorris
 Projeto Kotlin Android de amostra que usa a API [chuknorris.io](https://api.chucknorris.io/) e os componentes Jetpack.
 
 O objetivo deste projeto é experimentar novas tecnologias Android e aprender como funciona em um aplicativo.
