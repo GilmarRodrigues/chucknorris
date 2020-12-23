@@ -21,3 +21,7 @@ Este exemplo apresenta os seguintes componentes de arquitetura:
 O aplicativo usa uma arquitetura [MVVM](https://developer.android.com/jetpack/guide) para a camada de apresentação.
 
 Todas as transições de tela são feitas por [Navigation](https://developer.android.com/guide/navigation)
+
+
+<img src="https://github.com/GilmarRodrigues/chucknorris/blob/main/Screenshot_2020-12-23-06-35-44-452_br.com.gr.api.io.chucknorris.jpg" width="250">
+<img src="https://github.com/GilmarRodrigues/chucknorris/blob/main/Screenshot_2020-12-23-06-36-02-110_br.com.gr.api.io.chucknorris.jpg" width="250">
