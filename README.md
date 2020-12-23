@@ -1,8 +1,6 @@
 # App ChuckNorris
 Projeto Kotlin Android de amostra que usa a API [chuknorris.io](https://api.chucknorris.io/) e os componentes Jetpack.
 
-O objetivo deste projeto é experimentar novas tecnologias Android e aprender como funciona em um aplicativo.
-
 O aplicativo lista as categorias das piadas de chucknorris, que são consulmidas da api, e possui uma camada de apresentação, onde o usuario pode esta favoritando a piada. 
 Ao  marcar a piada como favorita, a mesma é armazenada internamente usando o Room.
 
