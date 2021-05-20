@@ -5,7 +5,6 @@ O aplicativo lista as categorias das piadas de chucknorris, que são consumidas 
 Ao marcar a piada como favorita, a mesma é armazenada internamente usando o Room.
 
 # Bibliotecas usadas
-Este exemplo apresenta os seguintes componentes de arquitetura:
 
 - [Navigation](https://developer.android.com/guide/navigation)
 - [DataBinding](https://developer.android.com/topic/libraries/data-binding)
@@ -17,7 +16,6 @@ Este exemplo apresenta os seguintes componentes de arquitetura:
 - [Retrofit](https://github.com/square/retrofit)
 - [Picasso](https://square.github.io/picasso/)
 
-# Padrão de projeto
 O aplicativo usa uma arquitetura [MVVM](https://developer.android.com/jetpack/guide) para a camada de apresentação.
 
 Todas as transições de tela são feitas por [Navigation](https://developer.android.com/guide/navigation)
