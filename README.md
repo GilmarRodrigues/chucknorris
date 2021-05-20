@@ -17,7 +17,7 @@ Este exemplo apresenta os seguintes componentes de arquitetura:
 - [Retrofit](https://github.com/square/retrofit)
 - [Picasso](https://square.github.io/picasso/)
 
-# Aquitetura 
+# Padrão de projeto
 O aplicativo usa uma arquitetura [MVVM](https://developer.android.com/jetpack/guide) para a camada de apresentação.
 
 Todas as transições de tela são feitas por [Navigation](https://developer.android.com/guide/navigation)
