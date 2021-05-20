@@ -8,7 +8,7 @@ Ao marcar a piada como favorita, a mesma é armazenada internamente usando o Roo
 Este exemplo apresenta os seguintes componentes de arquitetura:
 
 - [Navigation](https://developer.android.com/guide/navigation)
-- [View Binding](https://developer.android.com/topic/libraries/view-binding)
+- [Data Binding](https://developer.android.com/topic/libraries/data-binding)
 - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
 - [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines)
